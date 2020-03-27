@@ -60,6 +60,13 @@
         <!-- <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
         </li> -->
+        <br><hr class="m-0"><br>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#nasaImage"><span class="small"><b>NASA</b> photo of the day</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#joke"><span class="small"><b>random dad joke</b></span></a>
+        </li>
       </ul>
       
     </div>
@@ -339,6 +346,29 @@
 
     <hr class="m-0">
 
+    <!-- fun stuff  -->
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="nasaImage">
+      <div class="w-100">       
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h2 class="mb-5">NASA <span class="small">Photo of the Day</span></h2>
+            <p>Taken from the <a id="nasaApiUrl" target="_blank">NASA Planetary API.</a></p>
+            <p><b>Title:</b> <span id="nasaImgTitle"></span>
+              <a href="#" target="_blank" title="Note"  data-toggle="modal" data-target="#nasaImgModal">
+                <i class="fas fa-info-circle"></i>
+              </a>
+            </p>            
+            <a id=nasaImgUrl target="_blank"><img class="img-fluid" id="nasaImg"></a>
+          </div>
+          <div class="resume-date text-md-right">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="m-0">    
+
     <!-- experience  -->
     <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
       <div class="w-100">
@@ -414,6 +444,26 @@
 
       </div>
 
+    </section>
+
+    <hr class="m-0">
+
+    <!-- random dad joke  -->
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="joke">
+      <div class="w-100">
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-date text-md-left">
+            <div class="container border border-warning rounded">
+              <h3 class="text-muted"><span class="small">Random dad joke</span><hr class="m-0"></h3>
+              <p id="dadJoke"></p>
+              <h5 class="text-muted"><a href="https://icanhazdadjoke.com/" target="_blank"><span class="small">More dad jokes</span></a></h5>
+            </div>
+          </div>
+          <div class="resume-date text-md-right">
+          </div>
+        </div>
+
+      </div>
     </section>
 
     <hr class="m-0">
@@ -719,12 +769,34 @@
   </div>
 
 
-  <!-- Modal -->
+  <!-- College Apps Modal Modal -->
   <div class="modal fade" id="collegeApps" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-body">
           Unable to display images due to sensitive data. Will send snapshots upon request! Thanks!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NASA Image Description Modal -->
+  <div class="modal fade" id="nasaImgModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="nasaModalTitle"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="nasaModalDescription">
+          <p id="nasaModalDate"></p>
+          <p id="nasaModalDescription"></p>
+          <p id="nasaModalSource"><a target="_blank" href="">Source</a></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -743,6 +815,10 @@
   <!-- Custom scripts for this template -->
   <script src="js/resume.min.js"></script>
   <script src="js/custom.js"></script>
+  <script src ="js/api.js"></script>
+
+  <!-- importing axios CDN -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </body>
 
