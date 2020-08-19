@@ -7,6 +7,7 @@ window.onload = function() {
         .catch(error => console.error(error));
 
     // request Nasa Image of the Day from API
+    console.log(getDate())
     nasaUrl = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=' + getDate();
     axios.get(nasaUrl)
         .then(response => {
@@ -15,7 +16,7 @@ window.onload = function() {
             if(response.data.media_type=="image") {
                 document.getElementById("nasaImg").src = response.data.url;
                 document.getElementById("nasaImgUrl").href = response.data.url;
-                document.getElementById("nasaVid").src = "https://www.youtube.com/embed/t6rHHnABoT8";
+                document.getElementById("nasaVid").src = "https://www.youtube.com/embed/GwDLhTRkdPg";
             } else {
                 document.getElementById("nasaVid").src = response.data.url;
             }
